@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NN Student Council — Nomt Naran School</title>
+<meta name="description" content="Meet the NN Student Council leadership team and class representatives at Nomt Naran School.">
+<meta name="theme-color" content="#fcfaf7" id="themeColor">
+<script>try{const t=localStorage.getItem("nn-theme");if(t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark";}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet"></noscript>
+<style>
+:root {
+  --ink: #1c1917;
+  --muted: #716a63;
+  --line: #e9e1d8;
+  --paper: #fcfaf7;
+  --white: #fff;
+  --orange: #eb5b18;
+  --orange-deep: #b43d0b;
+  --tint: #fff0e7;
+  --navy: #17233e;
+  --radius: 18px;
+  --shadow: 0 18px 50px rgba(45, 31, 20, .08);
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --ink: #f7f2ec; --muted: #b8aea4; --line: #39332f; --paper: #171514; --white: #24211f;
+  --tint: #38231a; --navy: #202e4d; --shadow: 0 18px 50px rgba(0, 0, 0, .24);
+  color-scheme: dark;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { transition: background-color .25s ease, color .25s ease; font-family: 'DM Sans', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; line-height: 1.05; }
+a { color: inherit; }
+button, input { font: inherit; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; border-radius: 8px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+/* Navigation */
+.topbar { position: sticky; top: 0; z-index: 20; background: rgba(252, 250, 247, .88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(233, 225, 216, .9); }
+.topbar .wrap { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
+.brand-logo { width: 166px; height: 48px; display: block; border-radius: 8px; object-fit: contain; background: #fff; }
+.brand-name { color: var(--ink); }
+.theme-toggle { width: 38px; height: 38px; display: grid; place-items: center; margin-right: 4px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--ink); cursor: pointer; font-size: 1.05rem; transition: .2s ease; }
+.theme-toggle:hover { border-color: var(--orange); color: var(--orange); transform: rotate(12deg); }
+.topbar nav { display: flex; align-items: center; gap: 5px; }
+.topbar nav a { padding: 9px 14px; border-radius: 999px; text-decoration: none; color: var(--muted); font-size: .92rem; font-weight: 600; transition: .2s ease; }
+.topbar nav a:hover { color: var(--orange-deep); background: var(--tint); }
+.topbar nav .nav-cta { background: var(--ink); color: #fff; padding-inline: 17px; }
+.topbar nav .nav-cta:hover { background: var(--orange); color: #fff; }
+.mobile-menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); color: var(--ink); cursor: pointer; font-size: 1.3rem; }
+.mobile-menu-toggle:hover { border-color: var(--orange); color: var(--orange); }
+.drawer-backdrop { position: fixed; inset: 0; z-index: 30; visibility: hidden; background: rgba(20,16,12,.52); opacity: 0; transition: opacity .2s ease, visibility .2s ease; }
+.mobile-drawer { position: fixed; z-index: 31; inset: 0 0 0 auto; width: min(330px, 88vw); padding: 24px; background: var(--paper); box-shadow: -18px 0 50px rgba(0,0,0,.16); transform: translateX(105%); transition: transform .25s ease; }
+.mobile-drawer.is-open { transform: translateX(0); }
+.drawer-backdrop.is-open { visibility: visible; opacity: 1; }
+.drawer-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.drawer-head strong { font-family: 'Fraunces', serif; font-size: 1.35rem; }
+.drawer-close { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--ink); font-size: 1.25rem; cursor: pointer; }
+.drawer-links { display: grid; gap: 8px; padding-top: 24px; }
+.drawer-links a { padding: 14px 12px; border-radius: 12px; color: var(--ink); text-decoration: none; font-weight: 700; }
+.drawer-links a:hover { background: var(--tint); color: var(--orange-deep); }
+
+/* Hero */
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 70px; align-items: center; padding: 92px 0 82px; overflow: hidden; }
+[data-theme="dark"] .topbar { background: rgba(23, 21, 20, .88); }
+[data-theme="dark"] .hero::before { background: #2a211c; }
+[data-theme="dark"] .hero-card { background: #202e4d; }
+[data-theme="dark"] .brand-logo { background: #fff; }
+[data-theme="dark"] .btn.primary { background: var(--orange); border-color: var(--orange); }
+.hero::before { content: ''; position: absolute; z-index: -1; width: 420px; height: 420px; right: -150px; top: 16px; border-radius: 50%; background: #fff0e4; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--orange-deep); text-transform: uppercase; letter-spacing: .13em; font-size: .73rem; font-weight: 700; }
+.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--orange); }
+.hero h1 { max-width: 11ch; margin-top: 19px; font-size: clamp(3.3rem, 7vw, 6.4rem); letter-spacing: -.055em; }
+.hero h1 em { color: var(--orange); font-style: normal; }
+.hero-copy { max-width: 51ch; margin-top: 23px; color: var(--muted); font-size: 1.08rem; }
+.hero-actions { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 30px; }
+.btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 11px 18px; border: 1.5px solid var(--ink); border-radius: 999px; background: transparent; color: var(--ink); text-decoration: none; font-weight: 700; cursor: pointer; transition: .2s ease; }
+.btn:hover { border-color: var(--orange); background: var(--orange); color: #fff; transform: translateY(-1px); }
+.btn.primary { background: var(--ink); color: #fff; }
+.btn.primary:hover { background: var(--orange); border-color: var(--orange); }
+.hero-card { position: relative; padding: 29px; border-radius: 24px; background: var(--navy); color: #fff; box-shadow: var(--shadow); transform: rotate(1.5deg); }
+.hero-card::after { content: '✦'; position: absolute; right: 23px; top: 17px; color: #ffc29e; font-size: 1.5rem; }
+.hero-card-label { color: #ffc29e; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 700; }
+.hero-card h2 { margin-top: 15px; font-size: 2.25rem; letter-spacing: -.03em; }
+.hero-card p { margin-top: 13px; color: #d7dce8; font-size: .94rem; }
+.hero-card-rule { height: 1px; margin: 25px 0 20px; background: rgba(255,255,255,.2); }
+.hero-meta { display: flex; gap: 27px; }
+.hero-meta strong { display: block; color: #fff; font-family: 'Fraunces', serif; font-size: 2rem; line-height: 1; }
+.hero-meta span { display: block; margin-top: 7px; color: #b9c1d3; font-size: .78rem; }
+
+/* Sections */
+.section { padding-top: 28px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 27px; }
+.section-head h2 { font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -.035em; }
+.section-head p { max-width: 34ch; color: var(--muted); font-size: .95rem; }
+.section-kicker { margin-bottom: 9px; color: var(--orange-deep); font-size: .73rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+.leaders { display: grid; grid-template-columns: 1.22fr 1fr 1fr; gap: 17px; margin-bottom: 96px; }
+.leader { position: relative; min-height: 375px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding: 0; border: 0; border-radius: 22px; background: var(--navy); color: #fff; text-align: left; cursor: pointer; box-shadow: 0 8px 0 rgba(23,35,62,.06); transition: .25s ease; }
+.leader.is-president { min-height: 430px; background: var(--orange); }
+.leader:hover { transform: translateY(-5px); box-shadow: 0 17px 24px rgba(23,35,62,.15); }
+.portrait { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255,255,255,.18); font-family: 'Fraunces', serif; font-size: 9rem; font-weight: 800; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s ease; }
+.leader:hover .portrait img { transform: scale(1.04); }
+.leader-info { position: relative; padding: 90px 25px 24px; background: linear-gradient(to top, rgba(5,10,25,.76), transparent); }
+.leader.is-president .leader-info { background: linear-gradient(to top, rgba(120,35,0,.72), transparent); }
+.leader-info h3 { font-size: 1.75rem; letter-spacing: -.02em; }
+.leader-info span { display: block; margin-top: 7px; color: rgba(255,255,255,.82); font-size: .9rem; }
+
+/* Directory */
+.directory { padding-top: 2px; }
+.tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.search-wrap { position: relative; flex: 1 1 280px; max-width: 440px; }
+.search-wrap::before { content: '⌕'; position: absolute; left: 15px; top: 8px; color: var(--muted); font-size: 1.5rem; pointer-events: none; }
+.search { width: 100%; padding: 13px 16px 13px 43px; border: 1.5px solid var(--line); border-radius: 13px; background: var(--white); color: var(--ink); }
+.search::placeholder { color: #a29a91; }
+.search:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 4px rgba(235,91,24,.12); }
+.filters { display: flex; gap: 7px; flex-wrap: wrap; }
+.chip { padding: 9px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--white); color: var(--ink); font-size: .88rem; font-weight: 600; cursor: pointer; transition: .2s ease; }
+.chip:hover { border-color: var(--orange); color: var(--orange-deep); }
+.chip[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
+.advanced-filters { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.advanced-filters select { min-height: 38px; padding: 8px 32px 8px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--white); color: var(--ink); font: inherit; font-size: .86rem; cursor: pointer; }
+.advanced-filters select:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 4px rgba(235,91,24,.12); }
+.clear-filters { padding: 8px 12px; border: 0; background: transparent; color: var(--orange-deep); font-size: .84rem; font-weight: 700; cursor: pointer; }
+.clear-filters:hover { text-decoration: underline; }
+.count { margin: 17px 0 15px; color: var(--muted); font-size: .88rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.row { width: 100%; display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); color: var(--ink); text-align: left; cursor: pointer; transition: .2s ease; }
+.row:hover { border-color: var(--orange); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(45,31,20,.06); }
+.avatar { flex: none; width: 54px; height: 54px; display: grid; place-items: center; overflow: hidden; border-radius: 17px; background: var(--tint); color: var(--orange-deep); font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 800; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.row b { display: block; font-size: 1rem; }
+.row small { display: block; margin-top: 2px; color: var(--muted); font-size: .84rem; }
+.empty { display: none; padding: 44px 0; color: var(--muted); }
+.empty.show { display: block; }
+
+/* Dialog and footer */
+dialog { width: min(520px, calc(100% - 32px)); margin: auto; overflow: hidden; border: 0; border-radius: 23px; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+dialog::backdrop { background: rgba(20,16,12,.68); backdrop-filter: blur(5px); }
+dialog[open] { animation: pop .22s ease; }
+@keyframes pop { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+.d-head { display: flex; align-items: center; gap: 17px; padding: 32px 27px 25px; background: var(--orange); color: #fff; }
+.d-head .avatar { width: 82px; height: 82px; border-radius: 22px; background: #fff; font-size: 2rem; }
+.d-head h3 { font-size: 1.9rem; }
+.d-head span { display: block; margin-top: 6px; color: rgba(255,255,255,.84); font-size: .9rem; }
+.d-body { padding: 25px 27px 28px; background: var(--white); }
+.d-body h4 { margin-bottom: 8px; color: var(--muted); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.d-body p { margin-bottom: 20px; }
+.tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 22px; }
+.tags span { padding: 6px 12px; border-radius: 999px; background: var(--tint); color: var(--orange-deep); font-size: .85rem; font-weight: 600; }
+.d-actions { display: flex; gap: 9px; flex-wrap: wrap; }
+footer { margin-top: 102px; padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--orange-deep); font-weight: 600; }
+
+@media (max-width: 820px) {
+  .wrap { width: min(100% - 34px, 600px); }
+  .topbar .wrap { min-height: 64px; }
+  .topbar nav { display: flex; }
+  .topbar nav a { display: none; }
+  .mobile-menu-toggle { display: grid; place-items: center; }
+  .hero { grid-template-columns: 1fr; gap: 37px; padding: 64px 0 64px; }
+  .hero h1 { font-size: clamp(3.3rem, 15vw, 5.3rem); }
+  .hero-card { max-width: 460px; transform: rotate(0); }
+  .section-head { display: block; }
+  .section-head p { margin-top: 10px; }
+  .leaders { grid-template-columns: 1fr; gap: 14px; margin-bottom: 72px; }
+  .leader, .leader.is-president { min-height: 300px; }
+}
+@media (max-width: 470px) {
+  .brand-logo { width: 132px; height: 40px; }
+  .brand-name { display: none; }
+  .brand { font-size: .9rem; }
+  .nav-cta { padding-inline: 13px !important; }
+  .hero-meta { gap: 20px; }
+  .hero-card { padding: 24px; }
+  .d-head, .d-body { padding-left: 21px; padding-right: 21px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="NN Student Council home"><img class="brand-logo" src="nn-school-logo.png" alt="Nomt Naran School" width="166" height="48" fetchpriority="high" decoding="async"><span class="brand-name">Student Council</span></a>
+    <nav aria-label="Main navigation">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span></button>
+      <a href="#leadership">Leadership</a>
+      <a href="#members">Members</a>
+      <a class="nav-cta" href="mailto:council@naran.edu.mn">Share an idea <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer"><span aria-hidden="true">☰</span></button>
+  </div>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="drawer-head"><strong>Navigate</strong><button class="drawer-close" id="drawerClose" type="button" aria-label="Close navigation menu">×</button></div>
+  <nav class="drawer-links" aria-label="Mobile main navigation">
+    <a href="#leadership">Leadership</a>
+    <a href="#members">Members</a>
+    <a href="mailto:council@naran.edu.mn">Share an idea ↗</a>
+  </nav>
+</aside>
+
+<main id="top">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div>
+      <span class="eyebrow">Nomt Naran School · 2026</span>
+      <h1 id="hero-title">For students, <em>by students.</em></h1>
+      <p class="hero-copy">The NN Student Council turns student ideas into action. Find your representative, learn what they do, and help shape school life together.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#members">Find your representative <span aria-hidden="true">↓</span></a>
+        <a class="btn" href="mailto:council@naran.edu.mn">Share an idea <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Council snapshot">
+      <span class="hero-card-label">A seat at the table</span>
+      <h2>Every class has a voice.</h2>
+      <p>Our representatives listen, connect, and make sure good ideas get heard.</p>
+      <div class="hero-card-rule"></div>
+      <div class="hero-meta" id="heroMeta"></div>
+    </aside>
+  </section>
+
+  <section class="section wrap" id="leadership" aria-labelledby="leadership-title">
+    <div class="section-head">
+      <div><p class="section-kicker">Meet the team</p><h2 id="leadership-title">Leadership team</h2></div>
+      <p>Select a card to see what each leader is responsible for.</p>
+    </div>
+    <div class="leaders" id="leaders"></div>
+  </section>
+
+  <section class="section directory wrap" id="members" aria-labelledby="members-title">
+    <div class="section-head">
+      <div><p class="section-kicker">Find your voice</p><h2 id="members-title">Class representatives</h2></div>
+      <p>Every class has a representative on the council.</p>
+    </div>
+    <div class="tools">
+      <label class="search-wrap"><span class="sr-only">Search members</span><input class="search" id="search" type="search" placeholder="Search by name or class" aria-label="Search members" autocomplete="off"></label>
+      <div class="filters" id="filters" role="group" aria-label="Filter by grade"></div>
+    </div>
+    <div class="advanced-filters" aria-label="Advanced member filters">
+      <label class="sr-only" for="classFilter">Filter by class</label><select id="classFilter"><option value="all">All classes</option></select>
+      <label class="sr-only" for="statusFilter">Filter by status</label><select id="statusFilter"><option value="all">All members</option><option value="named">Named representatives</option><option value="open">To be announced</option></select>
+      <label class="sr-only" for="sortFilter">Sort members</label><select id="sortFilter"><option value="default">Sort: default</option><option value="name">Sort: name A–Z</option><option value="class">Sort: class</option></select>
+      <button class="clear-filters" id="clearFilters" type="button">Clear filters</button>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty">No one matches that search. Try a different name or clear the grade filter.</p>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>&copy; 2026 NN Student Council</span><a href="https://www.naran.edu.mn/" target="_blank" rel="noopener">Nomt Naran School website ↗</a></div></footer>
+
+<dialog id="dialog" aria-labelledby="dName">
+  <div class="d-head"><div class="avatar" id="dAvatar"></div><div><h3 id="dName"></h3><span id="dRole"></span></div></div>
+  <div class="d-body"><h4>Responsibilities</h4><div class="tags" id="dTags"></div><h4>About</h4><p id="dBio"></p><div class="d-actions" id="dActions"></div></div>
+</dialog>
+
+<script>
+const themeToggle = document.getElementById("themeToggle");
+const themeColor = document.getElementById("themeColor");
+const savedTheme = localStorage.getItem("nn-theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+function setTheme(theme) {
+  const dark = theme === "dark";
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  themeToggle.setAttribute("aria-pressed", String(dark));
+  themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  themeToggle.firstElementChild.textContent = dark ? "☀" : "☾";
+  themeColor.setAttribute("content", dark ? "#171514" : "#fcfaf7");
+}
+setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+themeToggle.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("nn-theme", next);
+  setTheme(next);
+});
+
+const menuToggle = document.getElementById("menuToggle");
+const mobileDrawer = document.getElementById("mobileDrawer");
+const drawerBackdrop = document.getElementById("drawerBackdrop");
+const drawerClose = document.getElementById("drawerClose");
+let drawerReturnFocus = null;
+function setDrawer(open) {
+  mobileDrawer.classList.toggle("is-open", open);
+  drawerBackdrop.classList.toggle("is-open", open);
+  mobileDrawer.setAttribute("aria-hidden", String(!open));
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+  document.body.style.overflow = open ? "hidden" : "";
+  if (open) { drawerReturnFocus = document.activeElement; drawerClose.focus(); }
+  else if (drawerReturnFocus) drawerReturnFocus.focus();
+}
+menuToggle.addEventListener("click", () => setDrawer(true));
+drawerClose.addEventListener("click", () => setDrawer(false));
+drawerBackdrop.addEventListener("click", () => setDrawer(false));
+document.querySelectorAll(".drawer-links a").forEach(link => link.addEventListener("click", () => setDrawer(false)));
+document.addEventListener("keydown", event => { if (event.key === "Escape" && mobileDrawer.classList.contains("is-open")) setDrawer(false); });
+
+const REP_BIO = g => `Represents Grade ${g} students on the council and passes their concerns and ideas to the leadership team.`;
+const REP_JOBS = ["Class leadership", "Student voice", "Events"];
+let members = [
+  {name:"Munkhenerel", role:"President", cls:"12B", type:"leadership", photo:null, jobs:["Leadership","Strategic planning","Student advocacy","Council management"], bio:"Leads the council and speaks for students on campus life, working to make Nomt Naran a place where every student is heard.", email:"munkhenerel@student.naran.edu.mn"},
+  {name:"Misheel", role:"Vice President", cls:"11A", type:"leadership", photo:null, jobs:["Operations","Event coordination","Team support"], bio:"Supports the president and runs day-to-day council operations, from planning events to keeping members connected.", email:"misheel@student.naran.edu.mn"},
+  {name:"Bilguun", role:"Secretary", cls:"12B", type:"leadership", photo:null, jobs:["Documentation","Communications","Record keeping"], bio:"Keeps the council's records and announcements so students can see what was decided and why.", email:"bilguun@student.naran.edu.mn"},
+  {name:"Tselmuun", role:"Class Representative", cls:"10B", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("10B")},
+  {name:"Emuujin", role:"Class Representative", cls:"11B", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("11B")},
+  {name:"Goomaral", role:"Class Representative", cls:"12A", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("12A")},
+  {name:"Enguun", role:"Class Representative", cls:"10A", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("10A")},
+  {name:"Chinhuslen", role:"Class Representative", cls:"10A", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("10A")},
+  {name:"", role:"Class Representative", cls:"11A", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("11A")},
+  {name:"", role:"Class Representative", cls:"12B", type:"representative", photo:null, jobs:REP_JOBS, bio:REP_BIO("12B")}
+];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const display = m => m.name || "To be announced";
+const initial = m => (m.name || "?").charAt(0).toUpperCase();
+const grade = m => m.cls.replace(/\D/g, "");
+function avatar(m) { return m.photo ? `<img src="${esc(m.photo)}" alt="" loading="lazy">` : esc(initial(m)); }
+let grade_filter = "all", class_filter = "all", status_filter = "all", sort_filter = "default", query = "", lastFocus = null;
+let reps = members.filter(m => m.type === "representative");
+let leaders = members.filter(m => m.type === "leadership");
+const classes = new Set(members.map(m => m.cls));
+$("heroMeta").innerHTML = `<div><strong>${members.length}</strong><span>council members</span></div><div><strong>${classes.size}</strong><span>classes represented</span></div>`;
+$("leaders").innerHTML = leaders.map((m, i) => `<button class="leader ${i === 0 ? 'is-president' : ''}" data-i="${members.indexOf(m)}" aria-label="View ${esc(display(m))}, ${esc(m.role)}"><div class="portrait">${avatar(m)}</div><div class="leader-info"><h3>${esc(display(m))}</h3><span>${esc(m.role)} · Class ${esc(m.cls)}</span></div></button>`).join("");
+const grades = [...new Set(reps.map(grade))].sort((a, b) => b - a);
+$("filters").innerHTML = [`<button class="chip" data-g="all" aria-pressed="true">All grades</button>`].concat(grades.map(g => `<button class="chip" data-g="${g}" aria-pressed="false">Grade ${g}</button>`)).join("");
+function renderGrid() {
+  const list = reps.filter(m =>
+    (grade_filter === "all" || grade(m) === grade_filter) &&
+    (class_filter === "all" || m.cls === class_filter) &&
+    (status_filter === "all" || (status_filter === "named" ? Boolean(m.name) : !m.name)) &&
+    (!query || (display(m) + " " + m.cls + " " + m.role + " " + (m.jobs || []).join(" ")).toLowerCase().includes(query))
+  ).sort((a, b) => sort_filter === "name" ? display(a).localeCompare(display(b)) : sort_filter === "class" ? a.cls.localeCompare(b.cls) || display(a).localeCompare(display(b)) : 0);
+  $("grid").innerHTML = list.map(m => `<button class="row" data-i="${members.indexOf(m)}" aria-label="View ${esc(display(m))}, Class ${esc(m.cls)}"><span class="avatar">${avatar(m)}</span><span><b>${esc(display(m))}</b><small>Class ${esc(m.cls)}</small></span></button>`).join("");
+  $("empty").classList.toggle("show", list.length === 0);
+  $("count").textContent = list.length === reps.length && !query ? `${list.length} representatives` : `${list.length} of ${reps.length} representatives`;
+}
+const dlg = $("dialog");
+function openMember(m) {
+  $("dAvatar").innerHTML = avatar(m); $("dName").textContent = display(m); $("dRole").textContent = `${m.role} · Class ${m.cls}`;
+  $("dTags").innerHTML = m.jobs.map(j => `<span>${esc(j)}</span>`).join(""); $("dBio").textContent = m.bio;
+  const actions = []; if (m.email) actions.push(`<a class="btn primary" href="mailto:${esc(m.email)}">Email ${esc(display(m))}</a>`); actions.push(`<button class="btn" id="dClose">Close</button>`);
+  $("dActions").innerHTML = actions.join(""); $("dClose").onclick = () => dlg.close(); lastFocus = document.activeElement; dlg.showModal();
+}
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+dlg.addEventListener("close", () => lastFocus && lastFocus.focus());
+document.addEventListener("click", e => { const card = e.target.closest("[data-i]"); if (card) return openMember(members[+card.dataset.i]); const chip = e.target.closest(".chip"); if (chip) { grade_filter = chip.dataset.g; document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === chip)); renderGrid(); } });
+$("search").addEventListener("input", e => { query = e.target.value.trim().toLowerCase(); renderGrid(); });
+$("classFilter").addEventListener("change", e => { class_filter = e.target.value; renderGrid(); });
+$("statusFilter").addEventListener("change", e => { status_filter = e.target.value; renderGrid(); });
+$("sortFilter").addEventListener("change", e => { sort_filter = e.target.value; renderGrid(); });
+$("clearFilters").addEventListener("click", () => { query = ""; grade_filter = "all"; class_filter = "all"; status_filter = "all"; sort_filter = "default"; $("search").value = ""; $("classFilter").value = "all"; $("statusFilter").value = "all"; $("sortFilter").value = "default"; document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.g === "all")); renderGrid(); });
+function refreshDirectory() {
+  reps = members.filter(m => m.type === "representative");
+  leaders = members.filter(m => m.type === "leadership");
+  const classSet = new Set(members.map(m => m.cls));
+  $("heroMeta").innerHTML = `<div><strong>${members.length}</strong><span>council members</span></div><div><strong>${classSet.size}</strong><span>classes represented</span></div>`;
+  $("leaders").innerHTML = leaders.map((m, i) => `<button class="leader ${i === 0 ? 'is-president' : ''}" data-i="${members.indexOf(m)}" aria-label="View ${esc(display(m))}, ${esc(m.role)}"><div class="portrait">${avatar(m)}</div><div class="leader-info"><h3>${esc(display(m))}</h3><span>${esc(m.role)} · Class ${esc(m.cls)}</span></div></button>`).join("");
+  const grades = [...new Set(reps.map(grade))].sort((a, b) => b - a);
+  $("filters").innerHTML = [`<button class="chip" data-g="all" aria-pressed="true">All grades</button>`].concat(grades.map(g => `<button class="chip" data-g="${g}" aria-pressed="false">Grade ${g}</button>`)).join("");
+  const classOptions = [...new Set(reps.map(m => m.cls))].sort();
+  $("classFilter").innerHTML = `<option value="all">All classes</option>` + classOptions.map(c => `<option value="${esc(c)}">Class ${esc(c)}</option>`).join("");
+  $("classFilter").value = class_filter;
+  renderGrid();
+}
+refreshDirectory();
+try {
+  const stored = JSON.parse(localStorage.getItem("nn-members") || "null");
+  if (Array.isArray(stored)) { members = stored; refreshDirectory(); }
+} catch (error) { /* Keep the embedded seed data if localStorage is unavailable. */ }
+window.addEventListener("storage", event => {
+  if (event.key !== "nn-members") return;
+  try { const updated = JSON.parse(event.newValue || "[]"); if (Array.isArray(updated)) { members = updated; refreshDirectory(); } } catch (error) {}
+});
+</script>
+</body>
+</html>

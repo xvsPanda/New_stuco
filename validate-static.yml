@@ -1,0 +1,47 @@
+name: Validate static site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JSON assets
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for filename in ('data/members.json', 'manus-routes.json'):
+              json.loads(Path(filename).read_text())
+              print(f'{filename}: valid')
+          PY
+
+      - name: Check embedded JavaScript syntax
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          for filename in ('index.html', 'admin.html'):
+              html = Path(filename).read_text()
+              scripts = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', html, re.S)
+              Path(f'/tmp/{filename}.js').write_text('\\n'.join(scripts))
+          PY
+          node --check /tmp/index.html.js
+          node --check /tmp/admin.html.js
+
+      - name: Verify required static files
+        run: |
+          test -s index.html
+          test -s admin.html
+          test -s nn-school-logo.png
+          test -s data/members.json
+          test -s .github/workflows/deploy-pages.yml

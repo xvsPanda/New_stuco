@@ -1,0 +1,153 @@
+[
+  {
+    "id": "munkhenerel",
+    "name": "Munkhenerel",
+    "role": "President",
+    "cls": "12B",
+    "type": "leadership",
+    "photo": null,
+    "jobs": [
+      "Leadership",
+      "Strategic planning",
+      "Student advocacy",
+      "Council management"
+    ],
+    "bio": "Leads the council and speaks for students on campus life, working to make Nomt Naran a place where every student is heard.",
+    "email": "munkhenerel@student.naran.edu.mn"
+  },
+  {
+    "id": "misheel",
+    "name": "Misheel",
+    "role": "Vice President",
+    "cls": "11A",
+    "type": "leadership",
+    "photo": null,
+    "jobs": [
+      "Operations",
+      "Event coordination",
+      "Team support"
+    ],
+    "bio": "Supports the president and runs day-to-day council operations, from planning events to keeping members connected.",
+    "email": "misheel@student.naran.edu.mn"
+  },
+  {
+    "id": "bilguun",
+    "name": "Bilguun",
+    "role": "Secretary",
+    "cls": "12B",
+    "type": "leadership",
+    "photo": null,
+    "jobs": [
+      "Documentation",
+      "Communications",
+      "Record keeping"
+    ],
+    "bio": "Keeps the council's records and announcements so students can see what was decided and why.",
+    "email": "bilguun@student.naran.edu.mn"
+  },
+  {
+    "id": "tselmuun",
+    "name": "Tselmuun",
+    "role": "Class Representative",
+    "cls": "10B",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 10B students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  },
+  {
+    "id": "emuujin",
+    "name": "Emuujin",
+    "role": "Class Representative",
+    "cls": "11B",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 11B students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  },
+  {
+    "id": "goomaral",
+    "name": "Goomaral",
+    "role": "Class Representative",
+    "cls": "12A",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 12A students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  },
+  {
+    "id": "enguun",
+    "name": "Enguun",
+    "role": "Class Representative",
+    "cls": "10A",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 10A students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  },
+  {
+    "id": "chinhuslen",
+    "name": "Chinhuslen",
+    "role": "Class Representative",
+    "cls": "10A",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 10A students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  },
+  {
+    "id": "open-11a",
+    "name": "",
+    "role": "Class Representative",
+    "cls": "11A",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 11A students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  },
+  {
+    "id": "open-12b",
+    "name": "",
+    "role": "Class Representative",
+    "cls": "12B",
+    "type": "representative",
+    "photo": null,
+    "jobs": [
+      "Class leadership",
+      "Student voice",
+      "Events"
+    ],
+    "bio": "Represents Grade 12B students on the council and passes their concerns and ideas to the leadership team.",
+    "email": ""
+  }
+]
